@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>NPA Data-Gen</title>
+    <title>KGC OOO AUTOMATION</title>
     <link rel="stylesheet" href="static/css/materialize.min.css" />
     <link rel="stylesheet" href="static/css/bootstrap-4-utilities.min.css" />
     <link
@@ -26,93 +26,90 @@
   </head>
 
   <body>
-    <header><nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid portrait-crop"  >
-          <div class="d-flex align-items-center">
-            <img src="/static/css/hdfc-bank-jobs.jpg" alt="HDFC Bank" width="250" height="100" />
-            <div class="mr-4">
-              <a class="navbar-brand" id="heading" href="#">
-                NPA Data-Gen
-              </a>
-            </div>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid portrait-crop">
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="/static/css/hdfc-bank-jobs.jpg" alt="HDFC Bank" width="300" height="100" />
+            <a class="navbar-brand" id="heading" href="#">
+              KGC OOO AUTOMATION
+            </a>
           </div>
-          
+      
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          
+      
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar links or additional content -->
           </div>
         </div>
       </nav>
+      
     </header>
+    <div class="container1 text-center">
+        <div class="inputbutton">
+            <img src="../static/css/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <!-- <button id="openPopupButton" >Input Data</button> -->
+            <button id="openPopupButton" class="btn btn-primary btn-3d">Input Data</button>
+        </div>
+    </div>
+    
 
 
     <div class="container text-center">
-        
-          
-          <button id="openPopupButton" >Input Data</button>
-          <div class="popup-container" id="popupContainer">
+        <div class="popup-container" id="popupContainer">
             <div class="popup-content">
-              <button class="close-button" onclick="closePopup()">Close</button>
-              <form class="full border" name="form" method="POST" enctype="multipart/form-data">
-                <section style="background: white">
-                      <h4>NPA-Raw-Zipped Folder</h4>
-                      <p>Please input zip-file containing CTG, Recovery and Web-RPM query output file</p>
-                      <input
-                          style="display: none"
-                          type="file"
-                          id="zip"
-                          name="zip_"
-                          enctype="multipart/form-data"
-                      />
-                      <button
-                          class="btn bg-primary"
-                          type="button"
-                          onclick="document.getElementById('zip').click()"
-                          style="background: #004c8f"
-                      >
-                          <strong>Choose file</strong>
-                      </button>
-                      <div class="btn btn-secondary">
-                          <label for="datepicker"></label>
-                          <input type="date" id="datepicker">
-                      </div>
-                      <div class="btn btn-secondary">
-                          <label for="datepicker"></label>
-                          <input type="date" id="datepicker">
-                      </div>
-                      
-                      </div>
-                      </div>
+             <button class="close-button" onclick="closePopup()">Close</button>
+             <form class="full border" name="form" method="POST" enctype="multipart/form-data">
+                   <section style="background: rgb(182, 182, 207); color:black" id="parallel-divs">
+
+
+                        <div class="right show" id="right1">
+                            <h4 >NPA-Raw-Zipped Folder</h4>
+                            <p style="font-size: 15px;">Please input zip-file containing CTG, Recovery and Web-RPM query output file</p>
+                            <input
+                                style="display: none"
+                                type="file"
+                                id="zip"
+                                name="zip_"
+                                enctype="multipart/form-data"
+                            />
+                            <button
+                                class="btn bg-primary"
+                                type="button"
+                                onclick="document.getElementById('zip').click()"
+                                style="background: #004c8f; margin-top: 20px;"
+                            >
+                                <strong>Choose file</strong>
+                            </button>
+                            <button class="btn bg-primary s12 m2 text-center" style="background: #004c8f; margin-top: 20px;" type="submit" value="Analyze" name="Analyze" onclick="showSpinner()">
+                                <strong id="analyzeButtonText">Analyze</strong>
+                                <div class="spinner-container" id="spinnerContainer" style="display: none;">
+                                <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="left show" id="right2">
+                            <ul id="animation-list" style="padding-left: 0; padding-bottom:0; list-style-position: inside;">
+                                <li style="font-size: 20px; font-family: 'Merriweather', serif">Takes zipped-folder as input, which contains CTG, Recovery, and Web-RPM query output-files generated from CADEX</li>
+                                <li style="font-size: 20px; font-family: 'Merriweather', serif">Generates NPA-Status Data</li>
+                                <li style="font-size: 20px; font-family: 'Merriweather', serif">If the date is NOT 1st (SOM), then SOM-file should also be included in the zipped-folder</li>
+                                <li style="font-size: 20px; font-family: 'Merriweather', serif">Zip-file (.zip) extension is allowed, .7z, etc. formats are not allowed.</li>
+                                <li style="font-size: 20px; font-family: 'Merriweather', serif">Kindly make sure that files uploaded are of the same timeline.</li>
+                              </ul>
+                        </div>
                       <br/>
                       <br/>
                       
-                      <button class="btn bg-primary s12 m2 text-center" style="color: white; background: #004c8f" type="submit" value="Analyze" name="Analyze" onclick="showSpinner()">
-                          <strong id="analyzeButtonText">Analyze</strong>
-                          <div class="spinner-container" id="spinnerContainer" style="display: none;">
-                          <div class="spinner"></div>
-                          </div>
-                      </button>
-                  </section>
+                      
+                    </section>
               </form>
             </div>
         </div>
     </div>
+    </div>
 
-    <footer class="footer">
-        <div class="services-container center-align">
-          <ul id="animation-list" style="padding-left: 0; list-style-position: inside;">
-            <li style="font-size: 15px; font-family: 'Merriweather', serif">Takes zipped-folder as input, which contains CTG, Recovery, and Web-RPM query output-files generated from CADEX</li>
-            <li style="font-size: 15px; font-family: 'Merriweather', serif">Generates NPA-Status Data</li>
-            <li style="font-size: 15px; font-family: 'Merriweather', serif">If the date is NOT 1st (SOM), then SOM-file should also be included in the zipped-folder</li>
-            <li style="font-size: 15px; font-family: 'Merriweather', serif">Zip-file (.zip) extension is allowed, .7z, etc. formats are not allowed.</li>
-            <li style="font-size: 15px; font-family: 'Merriweather', serif">Kindly make sure that files uploaded are of the same timeline.</li>
-          </ul>
-        </div>
-      </footer>
-      
 
     <!-- </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -120,3 +117,6 @@
   </body>
   </body>
 </html>
+
+
+

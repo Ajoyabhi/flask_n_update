@@ -33,19 +33,19 @@ def main():
         zip_file=request.files['zip_']
         zip_file.save(os.path.join('./', zip_file.filename))
        
-        day, result = collections_npa(zip_file.filename)
-        return render_template('download.html', filename = f'final_file_{day}.xlsx')
+        day, result = 12, 24
+        return render_template('download.html', filename = zip_file.filename)
    
 @app.route('/download/<filename>', methods=['GET', 'POST'])
-def download_a(filename):
+def download(filename):
     print(filename)
     print('hello')
-    @after_this_request
-    def remove_file(response):
-        os.remove(filename)
-#         for e_f in glob.glob('*.zip'):
-#             os.remove(e_f)
-        return response
+#     @after_this_request
+#     def remove_file(response):
+#         os.remove(filename)
+# #         for e_f in glob.glob('*.zip'):
+# #             os.remove(e_f)
+#         return response
 #     def remove_file(response):
 #         try:
 #             print("REMOVE FILE Function")

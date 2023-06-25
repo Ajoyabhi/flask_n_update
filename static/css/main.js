@@ -34,15 +34,34 @@ function hideSpinner() {
 }
 
 
- // Function to open the popup
+// Function to open the popup
 function openPopup() {
     document.getElementById('popupContainer').style.display = 'flex';
+    var popupContent = document.querySelector('.popup-content');
+    var rightDiv = document.getElementById('right1');
+    var leftDiv = document.getElementById('right2');
+    
+    popupContent.classList.add('show');
+    rightDiv.classList.add('show');
+    leftDiv.classList.add('show');
 }
 
-  // Function to close the popup
+
+// Function to close the popup
 function closePopup() {
     document.getElementById('popupContainer').style.display = 'none';
+    var popupContent = document.querySelector('.popup-content');
+    var rightDiv = document.getElementById('right1');
+    var leftDiv = document.getElementById('right2');
+    
+    popupContent.classList.remove('show');
+    rightDiv.classList.remove('show');
+    leftDiv.classList.remove('show');
 }
 
   // Event listener for the open popup button
 document.getElementById('openPopupButton').addEventListener('click', openPopup);
+
+
+var openPopupButton = document.getElementById('openPopupButton');
+openPopupButton.addEventListener('click', openPopup);

@@ -29,11 +29,11 @@
     <div class="col s12 m3">
       <div class="services-container center-align">
         <h3 style="font-family: 'Merriweather', serif">
-          NPA file is generated, Click <b>download file</b> to download
+          NPA file is generated, Click <div style="margin-top: 5px;"><b>download file</b> to download</div> 
         </h3>
 
         <a
-          href="{{ url_for('download_a', filename = filename) }}"
+          href="{{ url_for('download', filename = filename) }}"
           id="test"
           hidden
           >download Excel</a
@@ -43,6 +43,7 @@
           type="button"
           onclick="document.getElementById('test').click()"
           style="background: #004c8f"
+          id="download1"
         >
           <strong>Download file</strong>
         </button>
